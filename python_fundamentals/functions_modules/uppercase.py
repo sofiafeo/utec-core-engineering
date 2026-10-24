@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 def uppercase(str):
     result = ""
-    for char in str:
-        if ord('a') <= ord(char) <= ord('z'):
-            result += chr(ord(char) - 32)
+    for c in str:
+        if ord(c) >= 97 and ord(c) <= 122:
+            result += chr(ord(c) - 32)
         else:
-            result += char
-    print(result)
+            result += c
+    print("{}".format(result))
