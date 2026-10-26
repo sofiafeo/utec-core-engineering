@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-import math
 
 language = "Python"
 version = 3
-pi_approx = math.pi
+pi_approx = "3.14"
 computation_valid = 10 > 5
 
-print(f"Language: {language}")
-print(f"Version: {version}")
-print(f"Pi approx: {pi_approx:.2f}")
-print(f"Computation valid: {computation_valid}")
+print("Language: {}".format(language))
+print("Version: {}".format(version))
+print("Pi approx: {}".format(pi_approx))
+print("Computation valid: {}".format(computation_valid))
