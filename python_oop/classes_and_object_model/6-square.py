@@ -29,6 +29,7 @@ class Square:
         """Return the square position."""
         return self.__position
 
+
     @position.setter
     def position(self, value):
         """Set the square position after validating it."""
@@ -42,6 +43,11 @@ class Square:
                 for coordinate in value
             )
         ):
+            raise TypeError(
+                "position must be a tuple of 2 positive integers"
+            )
+        self.__position = value
+
             raise TypeError(
                 "position must be a tuple of 2 positive integer"
             )
