@@ -1,23 +1,24 @@
-
 #!/usr/bin/env python3
+"""Define a Square class with position and string representation."""
+
 
 class Square:
     """Represent a square."""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Initialize the square with size and position."""
+        """Initialize a square with size and position."""
         self.size = size
         self.position = position
 
     @property
     def size(self):
-        """Return the square size."""
+        """Retrieve the square size."""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Set the square size after validating it."""
-        if not isinstance(value, int) or isinstance(value, bool):
+        """Set the square size after validation."""
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
@@ -25,19 +26,17 @@ class Square:
 
     @property
     def position(self):
-        """Return the square position."""
+        """Retrieve the square position."""
         return self.__position
 
     @position.setter
     def position(self, value):
-        """Set the square position after validating it."""
+        """Set the square position after validation."""
         if (
             not isinstance(value, tuple)
             or len(value) != 2
             or not all(
-                isinstance(n, int)
-                and not isinstance(n, bool)
-                and n >= 0
+                isinstance(n, int) and n >= 0
                 for n in value
             )
         ):
@@ -48,7 +47,7 @@ class Square:
 
     def area(self):
         """Return the square area."""
-        return self.__size ** 2
+        return self.__size * self.__size
 
     def my_print(self):
         """Print the square using the # character."""
@@ -66,5 +65,7 @@ class Square:
             return ""
         rows = []
         for _ in range(self.__size):
-            rows.append(" " * self.__position[0] + "#" * self.__size)
+            rows.append(
+                " " * self.__position[0] + "#" * self.__size
+            )
         return "\n" * self.__position[1] + "\n".join(rows)
