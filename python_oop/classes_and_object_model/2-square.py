@@ -1,7 +1,5 @@
 
 #!/usr/bin/env python3
-"""Define a Square class with size validation."""
-
 
 class Square:
     """Represent a square."""
